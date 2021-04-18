@@ -10,18 +10,20 @@ public class UserController {
     @Autowired
     private UserService service;
 
+    @CrossOrigin
     @PostMapping("/user")
     public User addUser(@RequestBody User user){
         return service.saveUser(user);
     }
 
+    @CrossOrigin
     @GetMapping("/user/{id}")
     public User findUserById(@PathVariable int id){
         User user = service.getUserById(id);
         return user;
     }
 
-
+    @CrossOrigin
     @DeleteMapping("/user/{id}")
     public String deleteUser(@PathVariable int id){
         return service.deleteUser(id);
