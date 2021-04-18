@@ -2,6 +2,7 @@ package com.todolist.controller;
 
 import com.todolist.entity.Folder;
 import com.todolist.service.FolderService;
+import com.todolist.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import java.util.List;
 public class FolderController {
     @Autowired
     private FolderService service;
+    private TaskService taskService;
 
     @CrossOrigin
     @PostMapping("/folder")
@@ -30,9 +32,9 @@ public class FolderController {
         return service.getFolderById(id);
     }
     @CrossOrigin
-    @GetMapping("/folders/{id}")
-    public List<Folder> findFolderByUser( @PathVariable int id){
-        return service.getFolderByUser(id);
+    @GetMapping("/folders/{user}")
+    public List<Folder> findFolderByUser( @PathVariable int user){
+        return service.getUserFolders(user);
     }
 
     @CrossOrigin

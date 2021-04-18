@@ -36,7 +36,7 @@ public class FolderService {
     }
 
 
-    public List<Folder> getFolderByUser(int user){
+    public List<Folder> getUserFolders(int user){
         return repository.getFolderByUser(user);
     }
 }

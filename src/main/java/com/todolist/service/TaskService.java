@@ -45,5 +45,8 @@ public class TaskService {
     public List<Task> getFolderTasks(int id){
         return repository.findByFolder(id);
     }
-
+    public String deleteFolderTask(int folder){
+        repository.deleteByFolder(folder);
+        return "folder tasks deleted";
+    }
 }

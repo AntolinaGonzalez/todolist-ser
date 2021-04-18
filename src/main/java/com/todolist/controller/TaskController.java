@@ -52,4 +52,10 @@ public class TaskController {
     public String deleteTask(@PathVariable int id){
         return service.deleteTask(id);
     }
+
+    @CrossOrigin
+    @DeleteMapping("/tasks/{folder}")
+    public String deleteFolderTask(@PathVariable int folder){
+        return service.deleteFolderTask(folder);
+    }
 }
